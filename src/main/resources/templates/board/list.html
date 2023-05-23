@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymelaf/layout"
+      layout:decorate="~{layouts/main}">
+
+<main layout:fragment="content">
+
+<div th:each="board : ${board}" th:object="${board}">
+
+
+        <span>제목 : </span>
+
+
+        <a th:text="*{title}" th:href="@{/board/view/{id}(id=${board.id})}">
+        </a>
+
+
+</div>
+</main>
+</html>

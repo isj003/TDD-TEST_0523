@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymelaf/layout"
+      layout:decorate="~{layouts/main}">
+
+<main layout:fragment="content">
+
+
+<form method="post" th:object="${boardFrom}" th:action="@{/board/write}">
+
+
+    <dl>
+    <dt>제목</dt>
+    <dd><input type="text" th:field="*{title}"></dd>
+    </dl>
+    <dl>
+        <dt>내용</dt>
+        <dd><textarea th:field="*{content}"> </textarea></dd>
+    </dl>
+
+    <button type="submit">전송하기</button>
+
+</form>
+</main>
+</html>
